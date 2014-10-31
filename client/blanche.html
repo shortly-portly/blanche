@@ -3,18 +3,8 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-
-  {{> chart}}
+  {{> header}}
+  <div class="container">
+    {{> satisfaction}}
+  </div>
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
-
-<template name="chart">
-  <canvas id="myChart" width="400" height="400"></canvas>
-</template>
