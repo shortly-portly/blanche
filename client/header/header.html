@@ -16,9 +16,20 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
+      <ul class="nav navbar-nav">
+      {{#if currentUser}}
+        <li><a class="logout" href="#">Logout</a></li>
+      {{/if}}
+      {{#if adminUser}}
+      <li><a class="newUser" href="#">New User</a></li>
+      {{/if}}
+
+
+        </ul>
+
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="list-projects" href="#">{{> loginButtons}}</a></li>
+                <li><a class="list-projects" href="#">{{currentUser.profile.first_name}}</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
