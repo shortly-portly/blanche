@@ -1,7 +1,3 @@
-<head>
-  <title>blanche</title>
-</head>
-
 <body>
   {{> header}}
   <div class="container">

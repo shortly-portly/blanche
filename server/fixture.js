@@ -4,9 +4,9 @@ if ( Meteor.users.find().count() === 0 ) {
         email: 'blanche@email.com',
         password: 'blanche',
         profile: {
-            first_name: 'fname',
-            last_name: 'lname',
-            company: 'company',
+            first_name: 'Blanche',
+            last_name: 'Simmons',
+            role: "admin"
         }
     });
 }
