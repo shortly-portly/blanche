@@ -1,1 +1,16 @@
 /* CSS declarations go here */
+.push-right {
+  text-align: right;
+}
+
+.central {
+  text-align: center;
+}
+
+.question{
+  border-width: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 40px;
+}
