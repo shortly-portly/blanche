@@ -1,6 +1,6 @@
 Template.header.helpers({
   adminUser: function() {
-    if (Meteor.user().profile.role == 'admin') {
+    if (Meteor.user() && Meteor.user().profile.role == 'admin') {
       return true;
     }
   }

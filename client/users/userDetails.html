@@ -1,0 +1,23 @@
+<template name="userDetails">
+
+
+          <tr>
+          <td>
+            {{profile.first_name}}
+          </td>
+          <td>
+            {{profile.last_name}}
+          </td>
+          <td>
+            {{userEmail}}
+          </td>
+          <td class="central">
+            {{userAdmin}}
+
+          </td>
+          <td class="central">
+            <a href="/user/{{_id}}"><span class="glyphicon glyphicon-wrench"></span></a>
+          </td>
+        </tr>
+
+</template>
