@@ -1,4 +1,5 @@
 Template.satisfaction.rendered = function() {
+  console.log(this.data);
 var data = {
     labels: ["Work", "Money", "Health", "Friends & Family", "Fun/Recreation"],
     datasets: [
@@ -30,6 +31,9 @@ var data = {
 Template.satisfaction.events({
   'click': function(evt) {
     var activePoints = myRadarChart.getValue(evt);
-  
+    var w = myRadarChart.getData();
+    console.log("returned value");
+    console.log(w);
+
   }
 });

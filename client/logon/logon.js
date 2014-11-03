@@ -4,13 +4,13 @@ Template.logon.events({
 
       var email = template.find("input[name=email]");
       var password = template.find("input[name=password]");
-      
+
 
       Meteor.loginWithPassword(email.value, password.value, function(error) {
         if (error) {
           FlashMessages.sendError("Faled to Logon");
         } else {
-          Router.go('admin');
+          Router.go('home');
         }
       });
   }

@@ -1,3 +1,7 @@
+Meteor.publish("reviews", function () {
+  return Reviews.find();
+});
+
 Meteor.publish('allUsers', function() {
 
     if (this.userId) {
@@ -7,5 +11,4 @@ Meteor.publish('allUsers', function() {
         return Meteor.users.find();
       }
     }
-
 });

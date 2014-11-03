@@ -3250,7 +3250,10 @@
 
 
 		},
+		getData: function() {
+			return this;
 
+		},
 
 		buildScale : function(data){
 			this.scale = new Chart.RadialScale({

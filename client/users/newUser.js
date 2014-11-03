@@ -46,7 +46,15 @@ Template.newUser.events({
             role: role
           }
         };
-        Meteor.call('createServerUser', data);
+        var xyz = Meteor.call('createServerUser', data, function(error, result) {
+
+          Reviews.insert({user: result,
+            name: data.profile.first_name,
+            stress: 'daily',
+            status: "open"});
+        });
+        // Need to create a review for the new user
+
 
         FlashMessages.sendInfo("User Created");
       }

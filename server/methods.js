@@ -1,5 +1,8 @@
 Meteor.methods({
   createServerUser: function(user) {
-    Accounts.createUser(user);
+    var result = Accounts.createUser(user);
+    console.log("RESULT");
+    console.log(result);
+    return result;
   }
 });
