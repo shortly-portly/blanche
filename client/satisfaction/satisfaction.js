@@ -1,5 +1,5 @@
 Template.satisfaction.rendered = function() {
-  console.log(this.data);
+  
 var data = {
     labels: ["Work", "Money", "Health", "Friends & Family", "Fun/Recreation"],
     datasets: [

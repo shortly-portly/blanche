@@ -3,3 +3,12 @@ Template.users.helpers({
     return Meteor.users.find();
   }
 });
+
+Template.users.events({
+  'click .newUser': function(evt) {
+    event.preventDefault();
+    Router.go('newUser');
+
+  }
+
+});
