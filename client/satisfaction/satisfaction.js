@@ -1,5 +1,5 @@
 Template.satisfaction.rendered = function() {
-  
+
 var data = {
     labels: ["Work", "Money", "Health", "Friends & Family", "Fun/Recreation"],
     datasets: [
@@ -11,7 +11,7 @@ var data = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [0,0,0,0,0]
+            data: _.values(this.data)
         }
     ]
 };
@@ -32,8 +32,8 @@ Template.satisfaction.events({
   'click': function(evt) {
     var activePoints = myRadarChart.getValue(evt);
     var w = myRadarChart.getData();
-    console.log("returned value");
-    console.log(w);
+
+
 
   }
 });

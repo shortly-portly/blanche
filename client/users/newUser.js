@@ -8,11 +8,11 @@ var validateUser = function(data) {
     errors.push("please enter a password");
   }
 
-  if (!data.firstName) {
+  if (!data.profile.firstName) {
     errors.push("please enter a first name");
   }
 
-  if (!data.surname) {
+  if (!data.profile.surname) {
     errors.push("please enter a surname");
   }
 
@@ -20,7 +20,7 @@ var validateUser = function(data) {
 };
 
 var createReview = function(user) {
-  console.log("create Review called");
+
 
   var satisfaction = {
     work: 0,
@@ -55,16 +55,16 @@ Template.newUser.events({
     data = {
       email: template.find("input[name=email]").value,
       password: template.find("input[name=password]").value,
-      firstName: template.find("input[name=firstName]").value,
-      surname: template.find("input[name=surname]").value,
-      role: template.find("input[name=role]").checked
+      profile: {
+        firstName: template.find("input[name=firstName]").value,
+        surname: template.find("input[name=surname]").value,
+        role: template.find("input[name=role]").checked
+      }
     };
 
 
 
     errors = validateUser(data);
-
-    console.log(role);
 
 
     if (data.role) {
@@ -77,28 +77,16 @@ Template.newUser.events({
       FlashMessages.sendError(errors);
       return;
     } else {
-      var data = {
-
-        email: email,
-        password: password,
-        profile: {
-          first_name: firstName,
-          last_name: surname,
-          role: role
-        }
-      };
-
-      var xyz = Meteor.call('createServerUser', data, function(error, result) {
-
+      Meteor.call('createServerUser', data, function(error, result) {
         if (error) {
           FlashMessage("Error in creating user");
         } else {
           createReview(result);
         }
       });
-
-      FlashMessages.sendInfo("User Created");
     }
+
+    FlashMessages.sendInfo("User Created");
 
   }
 });

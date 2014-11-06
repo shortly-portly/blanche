@@ -3214,8 +3214,6 @@
 				}
 
 				var value = (fromCenter.distance/this.scale.drawingArea) * this.scale.max;
-				console.log(value);
-
 
 
 			var anglePerIndex = (Math.PI * 2) /this.scale.valuesCount,
@@ -3227,8 +3225,6 @@
 				pointIndex = 0;
 			}
 
-			console.log(pointIndex);
-			console.log(this.datasets[0].points[pointIndex]);
 
 
 			if (fromCenter.distance <= this.scale.drawingArea){
@@ -3238,11 +3234,11 @@
 			}
 
 
-			console.log("Before....");
-			console.log(this.datasets[0].points[pointIndex]);
-			console.log("After");
+
+
+
 			this.datasets[0].points[pointIndex].value = value.toFixed(1);
-			console.log(this.datasets[0].points[pointIndex]);
+			
 
 
 

@@ -1,21 +1,4 @@
 <template name="home">
   <h1>{{name}}</h1>
-
-    <div class="container">
-      {{> balance}}
-    </div>
-    <div class="container">
-      {{> stress}}
-    </div>
-    <div class="container">
-      {{> satisfaction}}
-    </div>
-
-<div class="row">
-  <div class="col-sm-12 col-sm-offset-1">
-    <button type="submit" class="saveReview btn btn-default">Save</button>
-    <button type="submit" class="submitReview btn btn-default">Submit</button>
-  </div>
-</div>
-
+    <a href="{{pathFor 'performance'}}">Performance Review</a>
 </template>
