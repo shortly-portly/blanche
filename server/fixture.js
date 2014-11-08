@@ -5,7 +5,7 @@ if ( Meteor.users.find().count() === 0 ) {
         password: 'blanche',
         profile: {
             firstName: 'Blanche',
-            last_name: 'Simmons',
+            surname: 'Simmons',
             role: "admin"
         }
 

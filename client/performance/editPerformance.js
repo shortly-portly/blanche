@@ -21,7 +21,7 @@ var collectData = function(template) {
 
 
 
-Template.performance.events ({
+Template.editPerformance.events ({
   'click .saveReview': function(evt, template) {
 
     var data = collectData(template);

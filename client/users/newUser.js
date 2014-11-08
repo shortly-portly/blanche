@@ -62,8 +62,6 @@ Template.newUser.events({
       }
     };
 
-
-
     errors = validateUser(data);
 
 
@@ -79,7 +77,7 @@ Template.newUser.events({
     } else {
       Meteor.call('createServerUser', data, function(error, result) {
         if (error) {
-          FlashMessage.sendError("Error in creating user");
+          FlashMessages.sendError("Error in creating user");
         } else {
           createReview(result);
         }
