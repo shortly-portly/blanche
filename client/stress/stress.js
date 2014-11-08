@@ -5,5 +5,15 @@ Template.stress.helpers({
     } else {
       return false;
     }
+  },
+
+  disabled: function() {
+    console.log("value of stess is...");
+    console.log(this.status);
+    if (this.status === "closed") {
+      return "disabled";
+    } else {
+      return;
+    }
   }
 });

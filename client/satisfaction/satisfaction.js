@@ -29,9 +29,13 @@ var data = {
 };
 
 Template.satisfaction.events({
-  'click': function(evt) {
-    var activePoints = myRadarChart.getValue(evt);
-    var w = myRadarChart.getData();
+  'click': function(evt,template) {
+    
+    if(Template.parentData(1).status === "open") {
+
+      var activePoints = myRadarChart.getValue(evt);
+      var w = myRadarChart.getData();
+    }
 
 
 

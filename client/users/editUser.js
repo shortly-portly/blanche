@@ -32,7 +32,6 @@ Template.editUser.helpers({
 
 Template.editUser.events({
   'click .updateUser': function(evt, template) {
-    console.log("update user called");
     event.preventDefault();
     var errors = [];
 
