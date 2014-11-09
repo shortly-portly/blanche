@@ -1,5 +1,7 @@
 <template name="viewPerformance">
-  <h1>View Performance</h1>
+  {{#with userDetails}}
+    <h1>{{profile.firstName}} {{profile.surname}} Performance Review</h1>
+  {{/with}}
   <div class="container">
     {{> viewBalance balance}}
   </div>

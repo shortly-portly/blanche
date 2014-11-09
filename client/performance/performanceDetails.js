@@ -5,3 +5,10 @@ Template.performanceDetail.helpers ({
     return x;
   }
 });
+
+Template.performanceDetail.events({
+  'click .reopenReview': function() {
+    console.log(this._id);
+    Reviews.update({_id: this._id}, {$set: {"status": "open"}});
+  }
+});

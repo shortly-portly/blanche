@@ -1,5 +1,29 @@
 var collectData = function(template) {
+  var roles = template.find("textarea[name=roles]").value;
+  var pastYear = template.find("input[name=pastYear]:checked").value;
+
+  /* describe */
+
+  var description = [];
+  for (i=0; i<5; i++) {
+    find = "input[name=describe" + i + "]";
+    description[i] = template.find(find).value;
+  }
+
+  /* dislike */
+  var dislike = [];
+  for (i=0; i<5; i++) {
+    find = "input[name=dislike" + i + "]";
+    dislike[i] = template.find(find).value;
+  }
+
+  var highlights = template.find("textarea[name=highlights]").value;
+  var lowlights = template.find("textarea[name=lowlights]").value;
+
+  var time = $('.time').val();
   var balance = $('.balance').val();
+
+
   var satisfaction = myRadarChart.getData();
   var satisfactionData = {};
 
@@ -10,10 +34,23 @@ var collectData = function(template) {
   var stress = template.find("input[name=stress]:checked").value;
 
   var data = {
+    roles: roles,
+    pastYear: pastYear,
+    description: description,
+    dislike: dislike,
+    highlights: highlights,
+    lowlights: lowlights,
+    time: time,
     balance: balance,
     satisfaction: satisfactionData,
     stress: stress
   };
+
+  var x = "satisfaction";
+  console.log("value of template.data.satisfaction is....");
+  console.log(template.data[x]);
+  console.log("running satisfaction.getData");
+  console.log(template.data[x].radar.getData());
 
   return data;
 

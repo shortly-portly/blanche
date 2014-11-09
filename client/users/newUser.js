@@ -21,6 +21,7 @@ var validateUser = function(data) {
 
 var createReview = function(user) {
 
+  
 
   var satisfaction = {
     work: 0,
@@ -32,6 +33,7 @@ var createReview = function(user) {
 
   Reviews.insert({
     user: user,
+    time: 50,
     balance: 50,
     stress: 'never',
     satisfaction: satisfaction,

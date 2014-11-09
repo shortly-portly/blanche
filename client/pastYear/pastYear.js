@@ -1,6 +1,6 @@
-Template.stress.helpers({
+Template.pastYear.helpers({
   isActive: function(value) {
-    if (value == this.stress) {
+    if (value == this.pastYear) {
       return true;
     } else {
       return false;
@@ -8,7 +8,6 @@ Template.stress.helpers({
   },
 
   disabled: function() {
-    
     if (this.status === "closed") {
       return "disabled";
     } else {

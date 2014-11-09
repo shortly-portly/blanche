@@ -25,16 +25,24 @@ var data = {
   ctx = document.getElementById("myChart").getContext("2d");
   myRadarChart = new Chart(ctx).Radar(data, options);
 
+  this.data.radar = myRadarChart;
+  console.log(this.data.radar);
+
+
+
 
 };
 
 Template.satisfaction.events({
   'click': function(evt,template) {
-    
-    if(Template.parentData(1).status === "open") {
 
-      var activePoints = myRadarChart.getValue(evt);
-      var w = myRadarChart.getData();
+    if(Template.parentData(1).status === "open") {
+      console.log(template.data.radar);
+
+      /* var activePoints = myRadarChart.getValue(evt); */
+      /* var w = myRadarChart.getData(); */
+      var activePoints = template.data.radar.getValue(evt);
+      var w = template.data.radar.getData();
     }
 
 

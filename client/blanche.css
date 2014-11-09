@@ -14,3 +14,7 @@
   padding-top: 0px;
   padding-bottom: 40px;
 }
+
+input[type="radio"]{
+  margin: 0 10px 0 10px;
+}
