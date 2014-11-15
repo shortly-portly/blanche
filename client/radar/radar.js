@@ -36,6 +36,7 @@ Template.radar.rendered = function() {
   myRadarChart = new Chart(ctx).Radar(data, options);
 
   console.log("value of radar is");
+  Radar[this.data.name] = myRadarChart;
   this.data.radar = myRadarChart;
   console.log(this.data);
 
@@ -44,6 +45,12 @@ Template.radar.rendered = function() {
 
 
 };
+
+Template.radar.helpers({
+  wibble: function() {
+    console.log("wibble called");
+  }
+});
 
 Template.radar.events({
   'click': function(evt,template) {
