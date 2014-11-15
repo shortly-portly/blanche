@@ -47,10 +47,7 @@ var collectData = function(template) {
   };
 
   var x = "satisfaction";
-  console.log("value of template.data.satisfaction is....");
-  console.log(template.data[x]);
-  console.log("running satisfaction.getData");
-  console.log(template.data[x].radar.getData());
+
 
   return data;
 
