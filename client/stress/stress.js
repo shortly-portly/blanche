@@ -8,7 +8,7 @@ Template.stress.helpers({
   },
 
   disabled: function() {
-    
+
     if (this.status === "closed") {
       return "disabled";
     } else {
