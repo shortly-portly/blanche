@@ -21,9 +21,11 @@ var validateUser = function(data) {
 
 var createReview = function(user) {
 
-  var data = {
+var data = {
     roles: "",
     pastYear: "",
+    liked: "",
+    disliked: "",
     describe: ["","","","",""],
     time: 50,
     stress: "Never",
@@ -35,15 +37,6 @@ var createReview = function(user) {
       "Health": 0
     }
   };
-
-
-/*  var satisfaction = {
-    work: 0,
-    money: 0,
-    health: 0,
-    Family: 0,
-    Fun: 0
-  }; */
 
   Reviews.insert({
     user: user,
