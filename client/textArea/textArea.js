@@ -1,8 +1,18 @@
 Template.textArea.helpers({
   value: function(name) {
-    var answer = Reviews.findOne({user: Meteor.userId()});
-    console.log("text area called");
-    console.log(answer);
+
+
+    console.log("Text areas value of session review id");
+    console.log(Session.get('reviewId'));
+    var answer = Reviews.findOne({_id: Session.get('reviewId')});
+
+
+
     return answer.data[name];
+  },
+  mode: function() {
+    if (Session.get('mode') == 'view') {
+      return 'readonly';
+    }
   }
 });

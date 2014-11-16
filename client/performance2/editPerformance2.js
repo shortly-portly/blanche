@@ -58,4 +58,18 @@ Template.editPerformance2.events ({
     FlashMessages.sendInfo("Review Saved");
 
   },
+
+  'click .submitReview': function(evt, template) {
+    evt.preventDefault();
+
+    var data = collectData(template);
+    Reviews.update(this.review._id, {$set: {"data": data, "status": "closed"}});
+    Router.go('viewPerformance2', {_id: Session.get('reviewId')});
+  }
 });
+
+Template.editPerformance2.created = function() {
+  Session.set("reviewId", this.data.review._id);
+  Session.set("mode", "edit");
+
+};

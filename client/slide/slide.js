@@ -1,17 +1,20 @@
 Template.slide.rendered = function() {
-  console.log("slider");
-  console.log(this.data.name);
-  var name = this.data.name;
-  var answer = Reviews.findOne({user: Meteor.userId()});
-  console.log(answer);
-  console.log(answer.data);
 
-  $('.time').noUiSlider({
+  var name = this.data.name;
+  var answer = Reviews.findOne({_id: Session.get('reviewId')});
+
+  var selector = "." + name;
+
+  $(selector).noUiSlider({
     start: [ answer.data[name] ],
     range: {
       'min': [  0 ],
       'max': [ 100 ]
     }
   });
+
+  if (Session.get('mode') == "view") {
+    $(selector).attr('disabled', 'disabled');
+  }
 
 };

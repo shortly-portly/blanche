@@ -12,21 +12,28 @@ if ( Meteor.users.find().count() === 0 ) {
 
     });
 
-    var satisfaction = {
-      work: 0,
-      money: 0,
-      health: 0,
-      Family: 0,
-      Fun: 0
+    var data = {
+      roles: "",
+      pastYear: "",
+      describe: ["","","","",""],
+      time: 50,
+      stress: "Never",
+      satisfaction: {
+        "Work": 0,
+        "Fun": 0,
+        "Money": 0,
+        "Friends": 0,
+        "Health": 0
+      }
     };
+
+
 
     Reviews.insert({
       user: id,
-      balance: 50,
-      stress: 'never',
-      satisfaction: satisfaction,
-      status: "open"
-    });
+      data: data,
+      status: "open"});
+
 
     var questions = [
       {

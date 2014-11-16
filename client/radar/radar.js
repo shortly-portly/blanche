@@ -2,7 +2,8 @@ Template.radar.rendered = function() {
 
 
   var name = this.data.name;
-  var answer = Reviews.findOne({user: Meteor.userId()});
+  var answer = Reviews.findOne({_id: Session.get('reviewId')});
+
   /* var values = answer.data[name]; */
 
   var data = {
@@ -56,13 +57,11 @@ Template.radar.events({
   'click': function(evt,template) {
 
 
-      /* var activePoints = myRadarChart.getValue(evt); */
-      /* var w = myRadarChart.getData(); */
+
+  if (Session.get('mode') == 'edit') {
       var activePoints = template.data.radar.getValue(evt);
       var w = template.data.radar.getData();
-
-
-
+    }
 
   }
 });

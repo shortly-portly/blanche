@@ -26,7 +26,7 @@ var createReview = function(user) {
     pastYear: "",
     describe: ["","","","",""],
     time: 50,
-    stress: 0,
+    stress: "Never",
     satisfaction: {
       "Work": 0,
       "Fun": 0,

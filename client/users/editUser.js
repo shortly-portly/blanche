@@ -55,12 +55,9 @@ Template.editUser.events({
     }
 
     if (errors.length > 0) {
-      console.log("some validation error occurred");
       FlashMessages.sendError(errors);
       return;
     } else {
-      console.log("about to call updateServer User with....");
-      console.log(data);
       Meteor.call('updateServerUser', data, function(error, result) {
         if (error) {
           FlashMessages.sendError("Error in creating user");

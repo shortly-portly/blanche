@@ -17,3 +17,7 @@ Meteor.publish('allUsers', function() {
       }
     }
 });
+
+Meteor.publish('myReview', function(id) {
+  return Reviews.find({"_id": id});
+});
