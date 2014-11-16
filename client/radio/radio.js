@@ -14,7 +14,7 @@ Template.radio.helpers({
 
   disabled: function() {
 
-    if (this.status === "closed") {
+    if (Session.get('mode') === "view") {
       return "disabled";
     } else {
       return;
